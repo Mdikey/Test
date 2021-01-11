@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <!-- https://websockets.readthedocs.io/en/stable/intro.html -->
+<!-- #region head -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
+
+    <title>MayGame</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+
+  </head>
+<!-- endregion -->
+    <body>
+
+        <script>
+            var ws = new WebSocket("ws://127.0.0.1:5678/");
+            ws.onmessage = function (event) {
+            var myDiv = document.createElement("div");
+            myDiv.innerHTML = event.data;
+            document.body.appendChild(myDiv);
+            }
+        </script>
+        <script>
+            var ws2 = new WebSocket("ws://127.0.0.1:5679/");
+            ws2.onmessage = function (event) {
+            let myDiv2 = document.createElement("script");
+            myDiv2.innerHTML = event.data;
+            document.body.appendChild(myDiv2);
+            }
+        </script>
+
+    </body>
+</html>
