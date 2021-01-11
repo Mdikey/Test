@@ -23,9 +23,9 @@ Handler.extensions_map={
     }
 
 httpd = socketserver.TCPServer(("", PORT), Handler)
-httpd.socket = ssl.wrap_socket (httpd.socket, 
-      keyfile="../cert/priv/cert/selfsigned_key.pem",
-      certfile="../cert/priv/cert/selfsigned.pem", server_side=True)
+# httpd.socket = ssl.wrap_socket (httpd.socket, 
+#       keyfile="../cert/priv/cert/selfsigned_key.pem",
+#       certfile="../cert/priv/cert/selfsigned.pem", server_side=True)
               # keyfile="path/to/key.pem", 
         # certfile='path/to/cert.pem',
 
